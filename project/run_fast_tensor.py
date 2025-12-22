@@ -7,7 +7,7 @@ import minitorch
 
 datasets = minitorch.datasets
 FastTensorBackend = minitorch.TensorBackend(minitorch.FastOps)
-if numba.cuda.is_available():
+if numba.cuda.is_available():  # type: ignore[attr-defined]
     GPUBackend = minitorch.TensorBackend(minitorch.CudaOps)
 
 

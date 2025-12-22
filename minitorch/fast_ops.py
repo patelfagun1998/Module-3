@@ -344,7 +344,7 @@ def tensor_reduce(
             acc = out[out_pos]  # Local accumulator
             for i in range(reduce_size):
                 a_pos = a_start_pos + i * reduce_stride
-                acc = fn(a_storage[a_pos], acc)
+                acc = fn(a_storage[a_pos], acc)  # type: ignore[arg-type]
             out[out_pos] = acc  # Single write at end
 
 
